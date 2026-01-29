@@ -4,6 +4,7 @@ import { useSafeAreaInsets } from "react-native-safe-area-context";
 
 import PrimaryButton from "@/src/components/PrimaryButton/PrimaryButton";
 import { IMAGES } from "@/src/constants/images";
+import ROUTES from "@/src/constants/RouteNames";
 import { RootStackParamList } from "@/src/types/navigation";
 import styles from "./welcome.styles";
 import { WELCOME_TEXT } from "./welcome.text";
@@ -11,7 +12,7 @@ import { WELCOME_TEXT } from "./welcome.text";
 const WelcomeScreen = ({ navigation }: RootStackParamList) => {
   const insets = useSafeAreaInsets();
   const onPressHandler = () => {
-    console.log(navigation);
+    navigation.navigate(ROUTES.ONBOARD_SCREEN_1);
   };
   return (
     <View style={styles.container}>
