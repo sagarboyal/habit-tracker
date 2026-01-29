@@ -1,0 +1,16 @@
+export const FONT_FAMILY = {
+    light: "Rubik-light",
+    lightItalic: "Rubik-light-italic",
+    regular: "Rubik-regular",
+    italic: "Rubik-italic",
+    medium: "Rubik-medium",
+    mediumItalic: "Rubik-medium-italic",
+    semiBold: "Rubik-semi-bold",
+    semiBoldItalic: "Rubik-semi-bold-italic",
+    bold: "Rubik-bold",
+    boldItalic: "Rubik-bold-italic",
+    extraBold: "Rubik-extra-bold",
+    extraBoldItalic: "Rubik-extra-bold-italic",
+    black: "Rubik-black",
+    blackItalic: "Rubik-black-italic",
+} as const;
