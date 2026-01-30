@@ -2,6 +2,7 @@ import OnBoardScreen1 from "@/src/screens/onboard/screens/OnBoardScreen1";
 import OnBoardScreen2 from "@/src/screens/onboard/screens/OnBoardScreen2";
 import OnBoardScreen3 from "@/src/screens/onboard/screens/OnBoardScreen3";
 import OnBoardScreen4 from "@/src/screens/onboard/screens/OnBoardScreen4";
+import MorningScheduleScreen from "@/src/screens/timeSchedule/morningSchedule/MorningScheduleScreen";
 import WelcomeScreen from "@/src/screens/welcome/WelcomeScreen";
 import { RootStackParamList } from "@/src/types/navigation";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
@@ -35,6 +36,11 @@ export function Routes() {
       <Stack.Screen
         name={ROUTES.ONBOARD_SCREEN_4}
         component={OnBoardScreen4}
+        options={{ headerShown: false }}
+      />
+      <Stack.Screen
+        name={ROUTES.MORNING_SCHEDULE}
+        component={MorningScheduleScreen}
         options={{ headerShown: false }}
       />
     </Stack.Navigator>
