@@ -1,3 +1,4 @@
+import HomeScreen from "@/src/screens/home/HomeScreen";
 import OnBoardScreen1 from "@/src/screens/onboard/screens/OnBoardScreen1";
 import OnBoardScreen2 from "@/src/screens/onboard/screens/OnBoardScreen2";
 import OnBoardScreen3 from "@/src/screens/onboard/screens/OnBoardScreen3";
@@ -47,6 +48,11 @@ export function Routes() {
       <Stack.Screen
         name={ROUTES.NIGHT_SCHEDULE}
         component={NightScheduleScreen}
+        options={{ headerShown: false }}
+      />
+      <Stack.Screen
+        name={ROUTES.HOME}
+        component={HomeScreen}
         options={{ headerShown: false }}
       />
     </Stack.Navigator>

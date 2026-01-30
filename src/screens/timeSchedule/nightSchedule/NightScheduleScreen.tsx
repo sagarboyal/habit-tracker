@@ -21,7 +21,7 @@ const NightScheduleScreen = ({ navigation }: RootStackParamList) => {
   });
 
   const onPressHandler = () => {
-    navigation.navigate(ROUTES.NIGHT_SCHEDULE);
+    navigation.navigate(ROUTES.HOME);
   };
 
   return (
