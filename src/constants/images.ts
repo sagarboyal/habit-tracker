@@ -5,4 +5,5 @@ export const IMAGES = {
     onBoardBackground3: require('@/assets/images/onboarding/image-3.png'),
     onBoardBackground4: require('@/assets/images/onboarding/image-4.png'),
     morningBackground: require('@/assets/images/common/morning-background.png'),
+    nightBackground: require('@/assets/images/common/night-background.png'),
 }

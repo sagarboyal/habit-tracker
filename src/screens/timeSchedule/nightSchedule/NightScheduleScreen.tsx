@@ -2,21 +2,22 @@ import PrimaryButton from "@/src/components/PrimaryButton/PrimaryButton";
 import { IMAGES } from "@/src/constants/images";
 import ROUTES from "@/src/constants/RouteNames";
 import { RootStackParamList } from "@/src/types/navigation";
+import { Period } from "@/src/types/timeValue";
 import React, { useState } from "react";
-import { ImageBackground, Text, View } from "react-native";
+import { Image, Text, View } from "react-native";
 import TimePicker from "../components/TimePicker";
 import TEXT from "../main.text";
-import { styles } from "./morningSchedule.styles";
+import { styles } from "./nightSchedule.styles";
 
-const MorningScheduleScreen = ({ navigation }: RootStackParamList) => {
+const NightScheduleScreen = ({ navigation }: RootStackParamList) => {
   const [time, setTime] = useState<{
     hour: number;
     minute: number;
-    period: "AM" | "PM";
+    period: Period;
   }>({
-    hour: 7,
+    hour: 11,
     minute: 0,
-    period: "AM",
+    period: "PM",
   });
 
   const onPressHandler = () => {
@@ -26,20 +27,21 @@ const MorningScheduleScreen = ({ navigation }: RootStackParamList) => {
   return (
     <View style={styles.container}>
       <View style={styles.header}>
-        <Text style={styles.title}>{TEXT.MORNING_SCREEN_TEXT}</Text>
+        <Text style={styles.title}>{TEXT.NIGHT_SCREEN_TEXT}</Text>
       </View>
-      <ImageBackground
-        source={IMAGES.morningBackground}
-        style={styles.bottomContainer}
-        resizeMode="stretch"
-      >
+      <View style={styles.bottomContainer}>
+        <Image
+          source={IMAGES.nightBackground}
+          style={styles.image}
+          resizeMode="cover"
+        />
         <View style={styles.bottom}>
           <TimePicker value={time} onChange={setTime} />
           <PrimaryButton text="GET STARTED" onPress={onPressHandler} />
         </View>
-      </ImageBackground>
+      </View>
     </View>
   );
 };
 
-export default MorningScheduleScreen;
+export default NightScheduleScreen;

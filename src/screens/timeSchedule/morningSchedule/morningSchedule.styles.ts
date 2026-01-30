@@ -5,7 +5,7 @@ import { StyleSheet } from "react-native";
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        backgroundColor: COLORS.primary + "B3"
+        backgroundColor: "#4D57C8"
     },
     header: {
         flex: 1,
