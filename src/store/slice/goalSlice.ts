@@ -17,10 +17,22 @@ const goalSlice = createSlice({
         },
         removeGoal: (state, action: PayloadAction<string>) => {
             state.goals = state.goals.filter(goal => goal.id !== action.payload);
+        },
+        toggleGoal: (state, action: PayloadAction<string>) => {
+            const goal = state.goals.find(g => g.id === action.payload);
+            if (goal) {
+                goal.status = !goal.status;
+            }
+        },
+        resetAllGoals: (state) => {
+            state.goals = state.goals.map(goal => ({
+                ...goal,
+                status: false
+            }));
         }
     }
 });
 
-export const { addGoal, removeGoal } = goalSlice.actions;
+export const { addGoal, removeGoal, toggleGoal, resetAllGoals } = goalSlice.actions;
 
 export default goalSlice.reducer;

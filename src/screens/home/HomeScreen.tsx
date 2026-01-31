@@ -1,16 +1,14 @@
+import { useGoalsDailyReset } from "@/src/hooks/useGoalsDailyReset";
 import { RootState } from "@/src/store/rootStore";
-import { addGoal, removeGoal } from "@/src/store/slice/goalSlice";
-import React, { useEffect } from "react";
+import { addGoal, removeGoal, toggleGoal } from "@/src/store/slice/goalSlice";
+import React from "react";
 import { Button, FlatList, StyleSheet, Text, View } from "react-native";
 import { useDispatch, useSelector } from "react-redux";
 
 const HomeScreen = () => {
   const goals = useSelector((state: RootState) => state.goal.goals);
   const dispatch = useDispatch();
-
-  useEffect(() => {
-    dispatch(removeGoal("324532244125.5818"));
-  }, [dispatch]);
+  useGoalsDailyReset();
 
   return (
     <View style={styles.container}>
@@ -27,10 +25,16 @@ const HomeScreen = () => {
               gap: 10,
             }}
           >
-            <Text style={styles.goalText}>{item.text}</Text>
+            <Text style={styles.goalText}>
+              {item.text + " | status: " + item.status}
+            </Text>
             <Button
               title="delete"
               onPress={() => dispatch(removeGoal(item.id.toString()))}
+            />
+            <Button
+              title="done"
+              onPress={() => dispatch(toggleGoal(item.id.toString()))}
             />
           </View>
         )}
