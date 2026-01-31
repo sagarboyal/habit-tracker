@@ -1,4 +1,5 @@
 import { IMAGES } from "@/src/constants/images";
+import ROUTES from "@/src/constants/RouteNames";
 import { RootStackParamList } from "@/src/types/navigation";
 import React from "react";
 import { Image, Text, View } from "react-native";
@@ -7,11 +8,17 @@ import { styles } from "../onboard.styles";
 import { ONBOARD_TEXT } from "../onboard.text";
 
 const OnBoardScreen4 = ({ navigation }: RootStackParamList) => {
-  const onPressNext = () => {};
+  const onPressNext = () => {
+    navigation.navigate(ROUTES.MORNING_SCHEDULE);
+  };
   return (
     <View style={styles.container}>
       <View style={styles.header}>
-        <Image source={IMAGES.onBoardBackground4} resizeMode="contain" />
+        <Image
+          source={IMAGES.onBoardBackground4}
+          resizeMode="cover"
+          style={{ width: "100%" }}
+        />
       </View>
       <View style={styles.textContainer}>
         <Text style={styles.title}>{ONBOARD_TEXT.screen4.TITLE}</Text>

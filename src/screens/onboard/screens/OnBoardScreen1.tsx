@@ -14,7 +14,11 @@ const OnBoardScreen1 = ({ navigation }: RootStackParamList) => {
   return (
     <View style={styles.container}>
       <View style={styles.header}>
-        <Image source={IMAGES.onBoardBackground1} resizeMode="contain" />
+        <Image
+          source={IMAGES.onBoardBackground1}
+          resizeMode="cover"
+          style={{ width: "100%" }}
+        />
       </View>
       <View style={styles.textContainer}>
         <Text style={styles.title}>{ONBOARD_TEXT.screen1.TITLE}</Text>
